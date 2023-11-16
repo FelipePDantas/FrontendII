@@ -1,0 +1,65 @@
+* {
+    font-family: Helvetica;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex; /* Torna a div container um flex container */
+    justify-content: space-between; /* Distribui o espaço entre os elementos filhos */
+}
+
+#text1, #text2 {
+    flex: 1; /* Permite que as divs ocupem todo o espaço disponível */
+    margin: 10px; /* Adiciona margem entre as divs (opcional) */
+}
+
+
+#menu {
+    padding: .5em 1em;
+    margin-bottom: .5em;
+    background-color: #0277B5;
+    color: #fff;
+    display: flex;
+    justify-content: center; /* Alteração aqui para centralizar o conteúdo */
+    align-items: center;
+}
+
+#menu img {
+    width: 80px;
+    height: 45px;
+}
+
+#menu ul {
+    display: flex;
+    list-style: none;
+}
+
+#menu ul li {
+    padding: 1em;
+    margin: 0 .5em; 
+    white-space: nowrap;
+    text-align: center;
+    align-items: center;
+    border-radius: 3px;
+}
+
+#menu ul li a {
+    font-weight: bold;
+    text-decoration: none;
+    color: #FFFFFF;
+    white-space: nowrap;
+    display: block;
+}
+
+#menu ul li:hover {
+    background-color: #FAF4F4;
+}
+
+#menu ul li:hover a {
+    color: #0277B5;
+}
+
+h1 {
+    text-align: center;
+}
