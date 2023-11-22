@@ -1,23 +1,18 @@
+:root{
+    --primary-color: #fff;
+}
+body{
+    background-color: var(--primary-color);
+    text-align: center;
+}
 * {
     font-family: Helvetica;
     margin: 0;
     padding: 0;
 }
 
-.container {
-    display: flex; /* Torna a div container um flex container */
-    justify-content: space-between; /* Distribui o espaço entre os elementos filhos */
-}
-
-#text1, #text2 {
-    flex: 1; /* Permite que as divs ocupem todo o espaço disponível */
-    margin: 50px; /* Adiciona margem entre as divs (opcional) */
-}
-
 #menu {
-    padding: auto;
     background-color: #0277B5;
-    color: #fff;
     display: flex;
     justify-content: center; /* Alteração aqui para centralizar o conteúdo */
     align-items: center;
@@ -40,7 +35,7 @@
 #menu ul li a {
     font-weight: bold;
     text-decoration: none;
-    color: black;
+    color: #000;
     white-space: nowrap;
     display: block;
 }
