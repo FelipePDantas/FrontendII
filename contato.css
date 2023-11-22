@@ -3,14 +3,14 @@
 }
 body{
     background-color: var(--primary-color);
-    text-align: left;
+    text-align: center;
 }
 
 textarea{
-    width: 50%;
-    height: 100px;
-    border: 1px solid #000;
-    border-radius: 1px;
+    width: 30%;
+    height: 60px;
+    border: 2px solid #000;
+    border-radius: 10px;
     resize: none;
 }
 
@@ -60,5 +60,33 @@ h2 {
 }
 
 h5 {
-    text-align: left;
+    text-align: center;
+}
+#name{
+    width: 30%;
+    height: 30px;
+    border: 2px solid #000;
+    border-radius: 10px;
+    resize: none;
+
+}
+#email{
+    width: 30%;
+    height: 30px;
+    border: 2px solid #000;
+    border-radius: 10px;
+    resize: none;
+}
+.Enviar{
+    padding: 10px 20px; /* Ajuste o padding conforme necessário */
+    font-size: 16px;   /* Ajuste o tamanho da fonte conforme necessário */
+    cursor: pointer;
+    background-color: #0277B5; /* Cor de fundo */
+    color: white; /* Cor do texto */
+    border: none; /* Remover borda */
+    border-radius: 5px; /* Borda arredondada */
+    transition: background-color 0.3s ease;
+}
+.Enviar:hover{
+    background-color: #02a6b5;
 }
