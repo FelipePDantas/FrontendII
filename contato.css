@@ -24,7 +24,7 @@ textarea{
     background-color: #0277B5;
     color: #fff;
     display: flex;
-    justify-content: center; /* Alteração aqui para centralizar o conteúdo */
+    justify-content: center; 
     align-items: center;
 }
 
@@ -55,7 +55,7 @@ textarea{
 }
 
 h2 {
-    margin-left: 50px;
+    margin-left: 0px;
     text-align: center;
 }
 
