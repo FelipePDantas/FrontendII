@@ -3,7 +3,7 @@
 }
 body{
     background-color: var(--primary-color);
-    text-align: left;
+    text-align: center;
 }
 * {
     font-family: Helvetica;
@@ -47,4 +47,32 @@ body{
 
 h2 {
     text-align: center;
+}
+.Entrar{
+    padding: 10px 20px; /* Ajuste o padding conforme necessário */
+    font-size: 16px;   /* Ajuste o tamanho da fonte conforme necessário */
+    cursor: pointer;
+    background-color: #0277B5; /* Cor de fundo */
+    color: white; /* Cor do texto */
+    border: none; /* Remover borda */
+    border-radius: 5px; /* Borda arredondada */
+    transition: background-color 0.3s ease;
+}
+.Entrar:hover{
+    background-color: #02a6b5;
+}
+#email{
+    width: 30%;
+    height: 30px;
+    border: 2px solid #000;
+    border-radius: 10px;
+    resize: none;
+
+}
+#pw{
+    width: 30%;
+    height: 30px;
+    border: 2px solid #000;
+    border-radius: 10px;
+    resize: none;
 }
