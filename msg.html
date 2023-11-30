@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    #title {
+        text-align: center;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    th, td {
+      border: 1px solid #ddd;
+      padding: 9px;
+      text-align: center;
+    }
+
+    th {
+        background-color: #0277B5;
+    }
+  </style>
+  <title>Mensagens</title>
+</head>
+<body>
+
+  <h2 id="title">Mensagens Recebidas</h2>
+
+  <table id="contactTable">
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Email</th>
+        <th>Mensagem</th>
+      </tr>
+    </thead>
+    <tbody>
+
+    </tbody>
+  </table>
+
+  <script>
+    function fillTable(data) {
+      const tableBody = document.querySelector('#contactTable tbody');
+
+      tableBody.innerHTML = '';
+
+      data.forEach(entry => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+          <td>${entry.nome}</td>
+          <td>${entry.email}</td>
+          <td>${entry.mensagem}</td>
+        `;
+        tableBody.appendChild(row);
+      });
+    }
+
+    function fetchData() {
+      fetch('https://app-uniesp-p2-43622fe4ead4.herokuapp.com/mensagens')
+        .then(response => response.json())
+        .then(data => fillTable(data))
+        .catch(error => console.error('Erro ao obter dados da API:', error));
+    }
+
+    window.onload = fetchData;
+  </script>
+
+</body>
+</html>

@@ -24,24 +24,116 @@
     <div>
         <br>
         <br>
-        <form>
-            <form autocomplete="on" method="get" target="_blank"></form>
-            <h5>Nome: </h5><input type="text" id="name" required>
+        <form id="contactForm">
+            <label for="name">Nome:</label>
+            <input type="text" id="name" name="name" required>
+
             <br>
             <br>
-            <h5>Email: </h5><input type="email" id="email" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+        
             <br>
             <br>
-            <!--<h4>Mensagem: </h4><input type="text" id="Mensagem" required>-->
-            <h5><strong>Mensagem:</strong></h5>
-            <textarea></textarea>
+
+            <label for="message">Mensagem:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+
+            <!-- <form autocomplete="on" method="get" target="_blank"></form> -->
+            <!-- <h5>Nome: </h5>
+            <input type="text" id="name" required>
+            <br>
+
+            <br>
+            <h5>Email: </h5>
+            <input type="email" id="email" required>
+            <br>
+            <br>
+            <h4>Mensagem: </h4><input type="text" id="Mensagem" required>-->
+            <!-- <h5><strong>Mensagem:</strong></h5>
+            <textarea></textarea> --> 
+
+            <br>
+            <br>
+
+            <button class="Enviar" type="submit" onclick="submitForm()">Enviar</button>
         </form>
     </div>
     <br>
     <br>
-    <div>
-        <input class="Enviar" type="submit" value="Enviar">
-    </div>
+    
     <!-- <a href="contato2.html"></a> -->
+
+<script>
+
+    function submitForm2() {
+        console.log('Função submitForm chamada!');
+        // Restante do código...
+    }
+
+
+    function submitForm() {
+        console.log('Entrando na função submitForm');
+        const form = document.getElementById('contactForm');
+        const formData = {
+            nome: form.elements.name.value,
+            email: form.elements.email.value,
+            message: form.elements.message.value,
+        };
+
+        console.log('Dados do formulário:', formData);
+
+        //https://cors-anywhere.herokuapp.com/https://app-uniesp-p2-43622fe4ead4.herokuapp.com/mensagens
+        fetch('https://app-uniesp-p2-43622fe4ead4.herokuapp.com/mensagens', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(formData),
+        })
+        .then(response => {
+            // if (!response.ok) {
+            //     console.log("Resposta: ", response.status)
+            //     console.log("Response: ", response)
+            //     throw new Error('Erro ao enviar formulário');
+            // }
+            alert(response.status);
+            if (response.status == "200"){
+                console.log("Resposta do sucesso: ", response.status)
+                alert('Deu certo!!!');
+                
+                // window.location.href = 'msg.html';
+            } else{
+                console.log("Resposta do erro: ", response.status)
+                return
+                console.log("Resposta do erro: ", response.status)
+                alert('Errooooooou!!!!!!');
+                
+            
+            }
+            
+            
+            
+            
+            
+            // return response.json();
+        })
+        .then(data => {
+            console.log('Resposta do servidor:', data);
+            alert('passou aqui');
+
+            if (data.success) {
+                window.location.href = 'msg.html';
+                alert('deu certo');
+            } else {
+                alert('Erro ao enviar mensagem. Tente novamente.');
+            }
+            // return
+        })
+        .catch(error => console.error('Erro:', error));
+    }
+</script>
+
 </body>
 </html>
